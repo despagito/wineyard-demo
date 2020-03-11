@@ -15,21 +15,28 @@ import Transaction from './components/Transaction';
 export default function App() {
   return (
     <Router className="router-list">
-      <Link className="router-item" to="/block/latest">Latest Block</Link>
+      {/* <Link className="router-item" to="/block/latest">Latest Block</Link>
       <Link className="router-item" to="/block/:id">Block</Link>
-      <Link className="router-item" to="/transaction/:id">Transaction</Link>
+      <Link className="router-item" to="/transaction/:id">Transaction</Link> */}
+        <Link to="/index" className="title">
+            <h1>Welcome to Wineyard</h1>
+        </Link>
 
         <Switch>
+            <Route path="/index">
+                <Latest />
+            </Route>
+
             <Route path="/block/latest">
-            <Latest />
+                <Latest />
             </Route>
 
             <Route path="/block/:id">
-            <Block />
+                <Block />
             </Route>
 
             <Route path="/transaction/:id">
-            <Transaction />
+                <Transaction />
             </Route>
         </Switch>
     </Router>

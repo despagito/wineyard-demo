@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import './block.css'
 import { createBrowserHistory } from "history";
 import { Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ export default class Block extends React.Component {
             // console.log('res---', res)
             return res.json()
         }).then(data => {
-            // console.log('data 🔥', data)
+            console.log('data 🔥', data)
             this.setState({
                 transactions: data.tx
             })
@@ -29,6 +29,7 @@ export default class Block extends React.Component {
     render() {
         return(
         <div className="block">
+            <div>All transactions of this block: </div>
             <ul>
             {
                 this.state.transactions.map(tx => {

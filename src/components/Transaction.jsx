@@ -1,7 +1,7 @@
 import React from 'react';
 import './transaction.css'
 import { createBrowserHistory } from "history";
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export default class Transaction extends React.Component {
     constructor(props) {
@@ -30,6 +30,7 @@ export default class Transaction extends React.Component {
     render() {
         return(
         <div className="transaction">
+            <div>All record of this transaction: </div>
             <ul>
             {
                 this.state.inputs.map(entry => {
